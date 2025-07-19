@@ -14,19 +14,19 @@
 # inventory.ini
 
 [all_in_one]
-192.168.10.2 ansible_ssh_user=nantwi   # Ansible Controller
-192.168.20.2 ansible_ssh_user=nantwi   # Wazuh SIEM
-192.168.60.2 ansible_ssh_user=nantwi   # Grafana/Prometheus
+192.168.10.2 # Ansible Controller
+192.168.20.2  # Wazuh SIEM
+192.168.60.2  # Grafana/Prometheus
 
 [controller]
-192.168.10.2 ansible_ssh_user=nantwi
+192.168.10.2
 # localhost ansible_connection=local
 
 [wazuh]
-192.168.20.2 ansible_ssh_user=nantwi
+192.168.20.2
 
 [grafana]
-192.168.60.2 ansible_ssh_user=nantwi
+192.168.60.2 
 
 
 
