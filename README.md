@@ -35,3 +35,20 @@ ansible ubuntu -m apt -a "update_cache=true" --become --ask-become-pass
 ansible rocky -m yum -a "update_cache=yes" -become --ask-become-pass
 ``
 
+### Installing Pakcage on the Ubuntu Instances
+```bash
+ansible ubuntu -m apt -a name=vim-nox --become --ask-become-pass
+```
+
+```bash
+ansible ubuntu -m apt -a name=tmux --become --ask-become-pass
+```
+```bash
+sudo ansible ubuntu -m apt -a "name=snapd state=latest" --become --ask-become-pass
+```
+
+
+### Upgrdae all packages on Ubuntu
+```bash
+sudo ansible ubuntu -m apt -a "upgrade=dist" --become --ask-become-pass
+```

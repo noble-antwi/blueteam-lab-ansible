@@ -14,20 +14,33 @@
 # inventory.ini
 
 [all_in_one]
-192.168.10.2 # Ansible Controller
-192.168.20.2  # Wazuh SIEM
-192.168.60.2  # Grafana/Prometheus
+192.168.10.2   # Ansible Controller
+192.168.20.2   # Wazuh SIEM
+192.168.60.2   # Grafana/Prometheus
+192.168.10.4   #tcm-ubuntu
+
 
 [controller]
-192.168.10.2
+192.168.10.2 
 # localhost ansible_connection=local
 
 [wazuh]
 192.168.20.2
 
+[tcm]
+192.168.10.4
+
 [grafana]
 192.168.60.2 
 
+[ubuntu]
+192.168.10.2 #ansiblve controller
+192.168.60.2 #grafana/prometheus
+192.168.10.4 #tcm-ubuntu
+
+
+[rocky]
+192.168.20.2 #wazuh-siem
 
 
 
