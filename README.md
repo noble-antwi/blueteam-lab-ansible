@@ -52,3 +52,15 @@ sudo ansible ubuntu -m apt -a "name=snapd state=latest" --become --ask-become-pa
 ```bash
 sudo ansible ubuntu -m apt -a "upgrade=dist" --become --ask-become-pass
 ```
+
+
+## Playbooks
+
+### Installing Apache 2
+
+``` bash
+ansible-playbook --ask-become-pass install_apache.yml
+```
+![Installing Apache2](image.png)
+
+![Example](image.png)

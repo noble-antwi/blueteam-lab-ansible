@@ -34,7 +34,7 @@
 192.168.60.2 
 
 [ubuntu]
-192.168.10.2 #ansiblve controller
+#192.168.10.2 #ansiblve controller
 192.168.60.2 #grafana/prometheus
 192.168.10.4 #tcm-ubuntu
 
