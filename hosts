@@ -14,7 +14,7 @@
 # inventory.ini
 
 [all_in_one]
-192.168.10.2   # Ansible Controller
+#192.168.10.2   # Ansible Controller
 192.168.20.2   # Wazuh SIEM
 192.168.60.2   # Grafana/Prometheus
 192.168.10.4   #tcm-ubuntu

@@ -1,18 +1,37 @@
 ---
-- hosts: ubuntu
+- name: Install and Configure Apache with PHP
+  hosts: all_in_one
   become: true
   tasks:
-
-  - name: Update Repository Index
-    apt:
-     update_cache: yes
-
-  - name: install Apache2 Package
-    apt:
-     name: apache2
-     state: latest
-
-  - name: Add php SUpport for Apache
-    apt:
-     name: libapache2-mod-php
-     state: latest
+    - name: Update Repository Index
+      ansible.builtin.apt:
+        update_cache: true
+      when: ansible_distribution in ["Debian", "Ubuntu"]
+    - name: Install Apache2 Package
+      ansible.builtin.apt:
+        name: apache2
+        state: present
+      when: ansible_distribution in ["Debian", "Ubuntu"]
+    - name: Add PHP Support for Apache
+      ansible.builtin.apt:
+        name: libapache2-mod-php
+        state: present
+      when: ansible_distribution in ["Debian", "Ubuntu"]
+- name: Install and Configure Apache with PHP on RHEL, Rcky
+  hosts: all_in_one
+  become: true
+  tasks:
+    - name: Update Repository Index
+      ansible.builtin.dnf:
+        update_cache: true
+      when: ansible_distribution in ["Rocky"]
+    - name: Install httpd Package
+      ansible.builtin.dnf:
+        name: httpd
+        state: present
+      when: ansible_distribution in ["Rocky"]
+    - name: Add PHP Support for Apache
+      ansible.builtin.dnf:
+        name: php
+        state: present
+      when: ansible_distribution in ["Rocky"]
